@@ -19,7 +19,6 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-22.4
     needs: test
-    if: startsWith(github.ref, 'refs/tags')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
