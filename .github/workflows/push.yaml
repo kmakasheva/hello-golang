@@ -2,7 +2,7 @@ name: golang-pipeline
 on: push
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container: golang:1.23.0
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
 
   deploy:
     name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.4
     needs: test
     if: startsWith(github.ref, 'refs/tags')
     steps:
